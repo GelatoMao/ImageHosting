@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { observer, useLocalStore } from 'mobx-react'
 import { useStores } from '../stores'
-import { message, Upload } from 'antd'
+import { message, Upload, Descriptions, Badge } from 'antd'
 import { InboxOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
 
@@ -92,24 +92,21 @@ const ComponentUploader = observer(() => {
       {
         ImageStore.serverFile ? <ImageShow>
           <H1>上传结果</H1>
-          <dl>
-            <dt>线上地址</dt>
-            <dd><a target="_blank" href={ImageStore.serverFile.attributes.url.attributes.url}>{ImageStore.serverFile.attributes.url.attributes.url}</a></dd>
-            <dt>文件名</dt>
-            <dd>{ImageStore.filename}</dd>
-            <dt>图片预览</dt>
-            <dd><Image src={ImageStore.serverFile.attributes.url.attributes.url} alt="" /></dd>
-            <dt>更多尺寸</dt>
-            <dd>
+          <Descriptions title="上传图片信息展示" bordered>
+            <Descriptions.Item label="线上地址" span={3}><a target="_blank" href={ImageStore.serverFile.attributes.url.attributes.url}>{ImageStore.serverFile.attributes.url.attributes.url}</a></Descriptions.Item>
+            <Descriptions.Item label="文件名" span={3}>{ImageStore.filename}</Descriptions.Item>
+            <Descriptions.Item label="图片预览" span={3}><Image src={ImageStore.serverFile.attributes.url.attributes.url} alt="" /></Descriptions.Item>
+            <Descriptions.Item label="更多尺寸" span={3}>
               <input ref={ref1} onChange={bindWidthChange} placeholder="最大宽度(可选)" />
               <input ref={ref2} onChange={bindHeightChange} placeholder="最大高度(可选)" />
-            </dd>
-            <dd><a target="_blank" href={store.fullStr} alt="">{store.fullStr}</a></dd>
-
-          </dl>
+            </Descriptions.Item>
+            <Descriptions.Item label="设置大小后线上地址" span={3}>
+              <a target="_blank" href={store.fullStr} alt="">{store.fullStr}</a>
+            </Descriptions.Item>
+          </Descriptions>
         </ImageShow> : null
       }
-    </div>
+    </div >
   )
 })
 
