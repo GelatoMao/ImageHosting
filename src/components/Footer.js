@@ -7,8 +7,6 @@ const Footer = styled.footer`
   font-size: 12px;
   color: #aaa;
 `
-
-
 function ComponentFooter() {
   return (
     <Footer>
