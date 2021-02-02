@@ -3,7 +3,6 @@ import { observable, action, makeObservable } from 'mobx'
 import { Auth } from '../models'
 import UserStore from './user'
 
-
 class AuthStore {
   // 处理mobx6以上版本兼容导致渲染延时问题 
   constructor() {

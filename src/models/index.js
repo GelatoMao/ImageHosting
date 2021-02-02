@@ -6,8 +6,8 @@ AV.init({
   serverURL: "https://r72ds9vj.lc-cn-e1-shared.com"
 })
 
+// 用户注册登录
 const Auth = {
-
   register(username, password) {
     let user = new User()
     user.setUsername(username)
@@ -33,4 +33,18 @@ const Auth = {
 
 }
 
-export { Auth }
+
+// 上传图片
+const Uploader = {
+  add(file, filename) {
+    const item = new AV.Object('Image')
+    const avFile = new AV.File(filename, file)
+    item.set('filename', filename)
+    item.set('owner', AV.User.current())
+    item.set('url', avFile)
+    return new Promise((resolve, reject) => {
+      item.save().then(serverFile => resolve(serverFile), err => reject(err))
+    })
+  }
+}
+export { Auth, Uploader }
