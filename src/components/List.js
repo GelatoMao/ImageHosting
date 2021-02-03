@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import { useStores } from '../stores'
 import { List, Spin, Descriptions } from 'antd'
-import InfiniteScroll from 'react-infinite-scroller';
+import InfiniteScroll from 'react-infinite-scroller/dist/InfiniteScroll';
 import styled from 'styled-components'
 
 const Img = styled.img`
