@@ -2,6 +2,9 @@
 import { observable, action, makeObservable } from 'mobx'
 import { Auth } from '../models'
 import UserStore from './user'
+import HistoryStore from './history'
+import ImageStore from './image'
+import { message } from 'antd'
 
 class AuthStore {
   // 处理mobx6以上版本兼容导致渲染延时问题 
@@ -32,6 +35,7 @@ class AuthStore {
           resolve(user)
         }).catch(err => {
           UserStore.resetUser()
+          message.error('登录失败')
           reject(err)
         })
     })
@@ -45,6 +49,7 @@ class AuthStore {
           resolve(user)
         }).catch((err) => {
           UserStore.resetUser()
+          message.error('注册失败')
           reject(err)
         })
     })
@@ -53,6 +58,8 @@ class AuthStore {
   @action logout() {
     Auth.logout()
     UserStore.resetUser()
+    HistoryStore.reset()
+    ImageStore.reset()
   }
 }
 
