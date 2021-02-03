@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-epic"]=this["webpackJsonpreact-epic"]||[]).push([[8],{229:function(e,c,t){"use strict";t.r(c);var n=t(5);t(0);c.default=function(){return Object(n.jsx)(n.Fragment,{children:Object(n.jsx)("h1",{children:"\u563b\u563b\u563b \u4e0a\u4f20\u81ea\u5df1\u538b\u7bb1\u5e95\u7684\u56fe\u7247 \u7acb\u5fd7\u505a\u5408\u683c\u7684\u8ff7\u59b9\uff01"})})}}}]);
+//# sourceMappingURL=8.fe5c859c.chunk.js.map

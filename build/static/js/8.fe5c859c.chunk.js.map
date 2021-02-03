@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/About.js"],"names":["About"],"mappings":"uIAUeA,UARf,WACE,OACE,mCACE","file":"static/js/8.fe5c859c.chunk.js","sourcesContent":["import React from 'react'\n\nfunction About() {\n  return (\n    <>\n      <h1>嘻嘻嘻 上传自己压箱底的图片 立志做合格的迷妹！</h1>\n    </>\n  )\n}\n\nexport default About"],"sourceRoot":""}
